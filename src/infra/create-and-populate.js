@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS "FORNECEDOR" (
     "NOME" varchar(64),
     "CNPJ" varchar(14),
     "EMAIL" varchar(64),
-    "ENDEREÇO" varchar(64)
+    "ENDEREÇO" varchar(80)
   );`;
 
 const ADD_FORNECEDOR_DATA = `
