@@ -11,7 +11,7 @@ const produto = (app, bdsqlite) => {
         
     })
 
-    //puxar livro por parametro
+    //puxar produto por parametro
     app.get('/produto/:id', (req, res) => {
         bdsqlite.all(`SELECT * FROM PRODUTO WHERE id= ${req.params.id}`, (error, resultado)=>{
             if(error) res.status(404).json(error);
