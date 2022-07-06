@@ -69,4 +69,4 @@ function populateTabelaP() {
 db.serialize( ()=> {
     criaTabelaP();
     populateTabelaP();
-}
+});
