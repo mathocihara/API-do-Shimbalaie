@@ -7,13 +7,13 @@ const fornecedor = (app, bd) => {
     const DAOfornecedor = new FornecedorDAO(bd)
     app.post('/fornecedor', (req, res) => {
         const body = req.body
-        const FornecedorDado = new Fornecedor(body.nome, body.cnpj, body.email, body.endereço)
         const data = async () => {
             try {
+                const FornecedorDado = new Fornecedor(body.nome, body.cnpj, body.email, body.endereço)
                 const fornecedor = await DAOfornecedor.inserirFornecedor(FornecedorDado)
                 res.send(fornecedor)
             } catch (error) {
-                res.send(error)
+                res.status(400).send(error.message)
             }
         }
         data()

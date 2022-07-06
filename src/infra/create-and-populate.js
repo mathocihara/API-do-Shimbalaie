@@ -5,7 +5,7 @@ const FORNECEDOR_SCHEMA = `
 CREATE TABLE IF NOT EXISTS "FORNECEDOR" (
     "ID" INTEGER PRIMARY KEY AUTOINCREMENT,
     "NOME" varchar(64),
-    "CNPJ" varchar(14),
+    "CNPJ" varchar(19),
     "EMAIL" varchar(64),
     "ENDEREÇO" varchar(80)
   );`;
