@@ -11,7 +11,7 @@ produto(app, bdsqlite)
 
 
 
-app.listen(3200, () => {
+app.listen(3030, () => {
     console.log('Rodando na porta 3200')
 
     

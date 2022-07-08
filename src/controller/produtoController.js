@@ -34,14 +34,14 @@ const produto = (app, bdsqlite) => {
     })
     //Rota para castrar produto
     app.post('/produto', (req, res) => {
-        body = req.body;
+        const body = req.body;
         const novoProduto = new Produtos(body.id, body.nome, body.marca, body.fornecedor, body.estoque, body.valor)
         const data = async () => {
             try {
                 const produto = await DAOProduto.CadastarProdutos(novoProduto);
-                res.status(200).json(produto)
+                res.status(200).send(produto)
             } catch (error) {
-                res.status(404).json(error)
+                res.status(404).send(error)
             }
         }
         data();
@@ -49,30 +49,15 @@ const produto = (app, bdsqlite) => {
     })
     //alterar produto
     app.put('/produto/:id', (req, res) => {
-         body = req.body;
-         id = req.params.id;
-        const data = async() => {
+        const body = req.body
+        const id = req.params.id
+        const params = [body.nome, body.marca, body.fornecedor, body.estoque, body.valor, id]
+        const data = async () => {
             try {
-                const ProdutoDadoAntigo = await DAOProduto.listarProdutosID(id);
-                const ProdutoAtualizado = new Produtos(
-                    // body.id || ProdutoDadoAntigo[0].ID,
-                    body.nome || ProdutoDadoAntigo[0].NOME,
-                    body.marca || ProdutoDadoAntigo[0].MARCA,
-                    body.fornecedor || ProdutoDadoAntigo[0].FORNECEDOR,
-                    body.estoque || ProdutoDadoAntigo[0].ESTOQUE,
-                    body.valor || ProdutoDadoAntigo[0].VALOR)
-                    console.log(ProdutoAtualizado);
-                const parametro = [ProdutoAtualizado.nome, 
-                    ProdutoAtualizado.marca, 
-                    ProdutoAtualizado.fornecedor,
-                    ProdutoAtualizado.estoque,
-                    ProdutoAtualizado.valor, 
-                    ProdutoAtualizado.id]
-                    console.log(parametro);
-                const produto = await DAOProduto.AlterarProduto(parametro);
-                res.status(200).json(produto)
-            } catch (error) { 
-                res.status(404).json(error)
+                const produto = await DAOProduto.AlterarProduto(params)
+                res.send(produto)
+            } catch (error) {
+                res.send(error)
             }
         }
         data();
@@ -80,12 +65,13 @@ const produto = (app, bdsqlite) => {
 
     //deletar produto
     app.delete('/produto/:id', (req, res) => {
+        const id = req.params.id
         const data = async () => {
             try {
-                const produto = await DAOProduto.DeletarProduto(req.params.id);
-                res.status(200).json(produto)
+                const produto = await DAOProduto.DeletarProduto(id);
+                res.status(200).send(produto)
             } catch (error) {
-                res.status(404).json(error)
+                res.status(404).send(error)
             }
         }
         data();

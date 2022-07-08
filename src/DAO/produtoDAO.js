@@ -35,13 +35,13 @@ class ProdutoDao {
         return new Promise((resolve, reject) => {
             this.bd.run(` 
                  UPDATE PRODUTO
-                    SET  NOME =?, MARCA = ?, FORNECEDOR = ?, ESTOQUE = ?, VALOR = ? WHERE ID=?`,
+                    SET  NOME = ?, MARCA = ?, FORNECEDOR = ?, ESTOQUE = ?, VALOR = ? WHERE ID=?`,
                 ProdutoAtualizado, 
                 (error) => {
                     if (error) reject(error);
                     else resolve('Produto alterado')
  
-                })
+            })
         })
     }
     DeletarProduto(id) {
