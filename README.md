@@ -51,26 +51,28 @@ npm start
 
 | Verbo HTTP | Rota  | Funcionalidade |
 | ---------- | ----- | -------------- |
-| **GET** | `http://localhost:3200/produto` | Pega todos os produtos|
-| **GET** | `http://localhost:3200/produto/{id}` | Pega os produtos por por {id} |
+| **GET** | `http://localhost:3030/produto` | Pega todos os produtos|
+| **GET** | `http://localhost:3030/produto/{id}` | Pega os produtos por por {id} |
 | **POST** | `http://localhost:3030/fornecedor` | Cadrastra novo Fornecedor |
 | **PUT** | `http://localhost:3030/fornecedor/{id}` | Altera fornecedor  por {id} |
 | **DELETE** | `http://localhost:---/funcionario/{id}` | Deleta funcionario por {id} |
 
 ### Resultados:
 
-``` bash
-//Produto
-		{
-		"ID": 3,
-		"NOME": "Tequila",
-		"MARCA": "paris",
-		"FORNECEDOR": "cavalheirosDistribuidora",
-		"ESTOQUE": "100L",
-		"VALOR": "R$15"
-	}
+#### Delete
+<img src="https://cdn.discordapp.com/attachments/985900481643708417/994077419923316736/delete.gif" width="400" height="400">
 
-```
+#### Put 
+<img src="https://cdn.discordapp.com/attachments/985900481643708417/994076906179797072/put.gif" width="400" height="400">
+
+#### Get
+<img src="https://cdn.discordapp.com/attachments/985900481643708417/994075068219015198/getID.gif" width="400" height="400">
+
+### Post
+<img src="https://cdn.discordapp.com/attachments/985900481643708417/994073279641948250/post.gif" width="400" height="400">
+
+
+
 
 
 
