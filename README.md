@@ -1,3 +1,4 @@
+
 # <h1 align= center>  Shimbalaiê PUB
 
   <img src= "https://cdn.pixabay.com/photo/2013/11/12/01/29/bar-209148_1280.jpg">
@@ -80,12 +81,6 @@ npm start
 - [Carol Vilarino](https://github.com/CarolVilarino)
 - [Matheus Ocihara](https://github.com/mathocihara)
 - [Isaque Rodrigues](https://github.com/isaquerodrigues00)
-
-
-
-
-
-
 
 
 
